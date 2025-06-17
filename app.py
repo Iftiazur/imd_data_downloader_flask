@@ -7,7 +7,8 @@ from io import BytesIO
 import glob
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 
 OUTPUT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../output'))
 
